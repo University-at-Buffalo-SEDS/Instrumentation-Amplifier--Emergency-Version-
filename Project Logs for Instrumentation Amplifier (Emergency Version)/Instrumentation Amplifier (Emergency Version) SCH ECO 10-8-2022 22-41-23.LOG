@@ -1,0 +1,18 @@
+Update Managed Component C1 From CMP-04424-000616-1[10 µF] To CMP-04424-000616-1[TAP106K016SCS] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component C2 From CMP-04424-000616-1[10 µF] To CMP-04424-000616-1[TAP106K016SCS] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component C3 From CMP-2006-01550-1[100 nF] To CMP-2006-01550-1[VJ0603Y104KXQCW1BC] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component C4 From CMP-2006-01550-1[100 nF] To CMP-2006-01550-1[VJ0603Y104KXQCW1BC] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component C5 From CMP-04424-000616-1[10 µF] To CMP-04424-000616-1[TAP106K016SCS] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component C6 From CMP-2006-01550-1[100 nF] To CMP-2006-01550-1[VJ0603Y104KXQCW1BC] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component D1 From CMP-2000-05198-2[LTST-C191KGKT] To CMP-2000-05198-2[LTST-C191KGKT] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component D2 From CMP-02539-000017-1[VS-10BQ015-M3/5BT] To CMP-02539-000017-1[VS-10BQ015-M3/5BT] in Instrumentation Amplifier (Emergency Version).SchDoc
+Replace Part P1 Screw Terminal in F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).SchDoc with Screw Terminal from ScrewTerminal.IntLib
+Replace Part P2 Screw Terminal in F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).SchDoc with Screw Terminal from ScrewTerminal.IntLib
+Update Managed Component R1 From CMP-2000-00795-1[470] To CMP-2000-00795-1[ERJ-3GEYJ471V] in Instrumentation Amplifier (Emergency Version).SchDoc
+Replace Part U1 BD00GA3WEFJ-E2 in F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).SchDoc with BD00GA3WEFJ-E2 from BD00GA3WEFJ-E2.IntLib
+Update Managed Component U2 From CMP-0136-00501-1[MCP1804T-A002I/DB] To CMP-0136-00501-1[MCP1804T-A002I/DB] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component U3 From CMP-0934-00044-1[AD8221ARZ-R7] To CMP-0934-00044-1[AD8221ARZ-R7] in Instrumentation Amplifier (Emergency Version).SchDoc
+Update Managed Component VR1 From CMP-1747-00001-1[10K] To CMP-1747-00001-1[3296W-1-103LF] in Instrumentation Amplifier (Emergency Version).SchDoc
+Replace Part VR2 3296W-1-202LF in F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).SchDoc with 3296W-1-202LF from 3296W-1-202LF.IntLib
+Replace Part VR3 3296W-1-101LF in F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).SchDoc with 3296W-1-101LF from 3296W-1-101LF.IntLib
+Update Managed Component VR4 From CMP-1747-00001-1[10K] To CMP-1747-00001-1[3296W-1-103LF] in Instrumentation Amplifier (Emergency Version).SchDoc

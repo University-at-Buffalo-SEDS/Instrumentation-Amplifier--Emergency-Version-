@@ -1,0 +1,375 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD22\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10/9/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">03:26:38</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc" class="file"><acronym title="F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc">F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">13</td></tr>
+</table>
+</td>
+</table><a name="IDV1E5XLIVEFL4EFTOOUWA2GOGLPHL3SKOBRLWRHBTBC2OAMRHRBJ"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW2UYLBYXDT30MPIEL5F4VFEERHVNYEXEIV505UCGLT3KA3QDYQ0J">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUUYHYWACLZNALOJBBUSISRZD0IRSXMPWHGQHA0LIDGY1TIYEC3CC">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDXPIQ4MCTSURCFVBIJSXCUSJCGNCA3GLPT5GCFAJGXHNEJZYFODYE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRXJWLRJ1GZJPHAXCRR0ADPE44KEI1CGK5OYDI0LMNAIU3ZKO5FCH">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBWOSQYABAGUMOQTTVU5XLG1N1DNEHVEA2KVWENMDH2TX5XTMX1CN">Width Constraint (Min=10mil) (Max=50mil) (Preferred=25mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUKFEORJ34XB3N0CD2UOOGGJ5GDLX0K0A0H0JWNN3FWCV14MVHGME">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=25mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDODPSA2VYDKA5CPLDAWSF4SSHXMVBBZWEZUJNP1OIYA1GUUPBMCEF">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDM20LC0J50XKRLPVLSJU3VPCTUHDNBPLTBZZBYYMMRXR4H3RLP31K">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDC3IN1L5WRTWVL2WBT30L3JD2FC3Y3JNVDIYBZNPUACWGI32G1RZD">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHEKQEGKUYUE2EPJUGDWEYLXIOLSIKX0A1TA2YHGKRSE3IMIJAUPE">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW0N5BUS2ZBAWFC0TFWXX5HDDHM0DV0VRKWQVWYMAT120IRRPAEUK">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHFGJWTCGH3SHJFE4GMXEC24G1G0QMO41RSE1AOMCOVSOZUO0LB2E">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ535MBSN3KU4GKAEUNPTBXCG2GWQNY5IM4RNGQPDWUWHAG2B1F2F">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">13</td>
+</tr>
+</table><br><a name="IDC3IN1L5WRTWVL2WBT30L3JD2FC3Y3JNVDIYBZNPUACWGI32G1RZD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4528.721mil|Location2.X=4539.971mil|Location1.Y=2206.816mil|Location2.Y=2218.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4528.721mil|Location2.X=4539.971mil|Location1.Y=2206.816mil|Location2.Y=2218.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (5.779mil &lt; 10mil) Between Pad C3-1(4560mil,2240mil) on L1 And Pad C3-2(4560mil,2184.882mil) on L1 [Top Solder] Mask Sliver [5.779mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4158.721mil|Location2.X=4169.971mil|Location1.Y=2206.816mil|Location2.Y=2218.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4158.721mil|Location2.X=4169.971mil|Location1.Y=2206.816mil|Location2.Y=2218.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (5.779mil &lt; 10mil) Between Pad C4-1(4190mil,2240mil) on L1 And Pad C4-2(4190mil,2184.882mil) on L1 [Top Solder] Mask Sliver [5.779mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4018.722mil|Location2.X=4029.972mil|Location1.Y=2504.375mil|Location2.Y=2515.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4018.722mil|Location2.X=4029.972mil|Location1.Y=2504.375mil|Location2.Y=2515.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (5.779mil &lt; 10mil) Between Pad C6-1(4050mil,2537.559mil) on L1 And Pad C6-2(4050mil,2482.441mil) on L1 [Top Solder] Mask Sliver [5.779mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHEKQEGKUYUE2EPJUGDWEYLXIOLSIKX0A1TA2YHGKRSE3IMIJAUPE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4264.69mil|Location2.X=4275.94mil|Location1.Y=2241.619mil|Location2.Y=2252.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4264.69mil|Location2.X=4275.94mil|Location1.Y=2241.619mil|Location2.Y=2252.869mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad U2-1(4290mil,2200mil) on L1 And Track (4248.661mil,2255.118mil)(4512.441mil,2255.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4355.241mil|Location2.X=4366.491mil|Location1.Y=2241.619mil|Location2.Y=2252.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4355.241mil|Location2.X=4366.491mil|Location1.Y=2241.619mil|Location2.Y=2252.869mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad U2-2(4380.551mil,2200mil) on L1 And Track (4248.661mil,2255.118mil)(4512.441mil,2255.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4445.792mil|Location2.X=4457.042mil|Location1.Y=2241.619mil|Location2.Y=2252.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4445.792mil|Location2.X=4457.042mil|Location1.Y=2241.619mil|Location2.Y=2252.869mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad U2-3(4471.102mil,2200mil) on L1 And Track (4248.661mil,2255.118mil)(4512.441mil,2255.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4439.887mil|Location2.X=4451.137mil|Location1.Y=2383.351mil|Location2.Y=2394.601mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4439.887mil|Location2.X=4451.137mil|Location1.Y=2383.351mil|Location2.Y=2394.601mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.874mil &lt; 10mil) Between Pad U2-4(4380.551mil,2436.22mil) on L1 And Track (4248.661mil,2381.102mil)(4512.441mil,2381.102mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.874mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDW0N5BUS2ZBAWFC0TFWXX5HDDHM0DV0VRKWQVWYMAT120IRRPAEUK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3800.536mil|Location2.X=3811.786mil|Location1.Y=2916.824mil|Location2.Y=2928.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3800.536mil|Location2.X=3811.786mil|Location1.Y=2916.824mil|Location2.Y=2928.074mil|Absolute=True">Silk To Silk Clearance Constraint: (7.68mil &lt; 10mil) Between Text "*" (3767.5mil,2914mil) on Top Overlay And Track (3813mil,2922.6mil)(3813mil,2933.5mil) on Top Overlay Silk Text to Silk Clearance [7.68mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3800.602mil|Location2.X=3811.852mil|Location1.Y=2930.929mil|Location2.Y=2942.179mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3800.602mil|Location2.X=3811.852mil|Location1.Y=2930.929mil|Location2.Y=2942.179mil|Absolute=True">Silk To Silk Clearance Constraint: (8.858mil &lt; 10mil) Between Text "*" (3767.5mil,2914mil) on Top Overlay And Track (3813mil,2933.5mil)(3977mil,2933.5mil) on Top Overlay Silk Text to Silk Clearance [8.858mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3103.05mil|Location2.X=3114.3mil|Location1.Y=2917.272mil|Location2.Y=2928.522mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3103.05mil|Location2.X=3114.3mil|Location1.Y=2917.272mil|Location2.Y=2928.522mil|Absolute=True">Silk To Silk Clearance Constraint: (8.329mil &lt; 10mil) Between Text "Bridge V" (3115mil,2924.997mil) on Top Overlay And Text "VR1" (2960.023mil,2920.01mil) on Top Overlay Silk Text to Silk Clearance [8.329mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4515.07mil|Location2.X=4526.32mil|Location1.Y=2374.953mil|Location2.Y=2386.203mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4515.07mil|Location2.X=4526.32mil|Location1.Y=2374.953mil|Location2.Y=2386.203mil|Absolute=True">Silk To Silk Clearance Constraint: (8.667mil &lt; 10mil) Between Text "C3" (4589.99mil,2290.016mil) on Top Overlay And Track (4248.661mil,2381.102mil)(4512.441mil,2381.102mil) on Top Overlay Silk Text to Silk Clearance [8.667mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4515.069mil|Location2.X=4526.319mil|Location1.Y=2314.381mil|Location2.Y=2325.631mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4515.069mil|Location2.X=4526.319mil|Location1.Y=2314.381mil|Location2.Y=2325.631mil|Absolute=True">Silk To Silk Clearance Constraint: (8.632mil &lt; 10mil) Between Text "C3" (4589.99mil,2290.016mil) on Top Overlay And Track (4512.441mil,2255.118mil)(4512.441mil,2381.102mil) on Top Overlay Silk Text to Silk Clearance [8.632mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3133.112mil|Location2.X=3144.362mil|Location1.Y=2044.37mil|Location2.Y=2055.62mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=F:\Stuff\SEDS - Avionics\Instrumentation Amplifier (Emergency Version)\PCB_Project\Instrumentation Amplifier (Emergency Version).PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3133.112mil|Location2.X=3144.362mil|Location1.Y=2044.37mil|Location2.Y=2055.62mil|Absolute=True">Silk To Silk Clearance Constraint: (7.526mil &lt; 10mil) Between Text "Offset" (3145mil,2025mil) on Top Overlay And Text "VR4" (2970.026mil,2020.01mil) on Top Overlay Silk Text to Silk Clearance [7.526mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
