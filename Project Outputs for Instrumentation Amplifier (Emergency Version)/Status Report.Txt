@@ -1,0 +1,17 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [Instrumentation Amplifier (Emergency Version).PrjPcb]
+   Generated File[Instrumentation Amplifier (Emergency Version)_Soldermask_Bot.gbr]
+   Generated File[Instrumentation Amplifier (Emergency Version)_Soldermask_Top.gbr]
+   Generated File[Instrumentation Amplifier (Emergency Version)_NPTH_Drill.gbr]
+   Generated File[Instrumentation Amplifier (Emergency Version)_PTH_Drill.gbr]
+   Generated File[Instrumentation Amplifier (Emergency Version)_Drawing_1.gbr]
+   Generated File[Instrumentation Amplifier (Emergency Version)_Drillmap_1.gbr]
+   Generated File[Instrumentation Amplifier (Emergency Version).EXTREP]
+   Generated File[Instrumentation Amplifier (Emergency Version).REP]
+
+
+Files Generated   : 8
+Documents Printed : 0
+
+Finished Output Generation At 5:52:28 PM On 10/10/2022

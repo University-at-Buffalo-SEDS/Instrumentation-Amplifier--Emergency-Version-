@@ -1,0 +1,104 @@
+*************************************************************
+FileName = Instrumentation Amplifier (Emergency Version).GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Solder
+      File : Instrumentation Amplifier (Emergency Version)_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : L2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Instrumentation Amplifier (Emergency Version)_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : L1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+*************************************************************
+
+*************************************************************
+Generating : Non-plated through-hole drill file
+      File : Instrumentation Amplifier (Emergency Version)_NPTH_Drill.gbr
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Plated through-hole drill file
+      File : Instrumentation Amplifier (Emergency Version)_PTH_Drill.gbr
+
+
+Used DCodes :
+    D27
+    D28
+    D29
+    D30
+    D31
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : Instrumentation Amplifier (Emergency Version)_Drawing_1.gbr
+
+    Adding Drill Pair : L1-L2
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D33
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : Instrumentation Amplifier (Emergency Version)_Drillmap_1.gbr
+
+    Adding Drill Pair : L1-L2
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D33
+*************************************************************
+
